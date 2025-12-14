@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - P2P Collaboration Hub</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config (matches main app) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#18181B',
+                        'brand-surface': '#27272A',
+                        'brand-border': '#3F3F46',
+                        'brand-text-primary': '#F4F4F5',
+                        'brand-text-secondary': '#A1A1AA',
+                        'brand-accent-purple': '#A855F7',
+                        'brand-accent-pink': '#EC4899',
+                        'brand-accent-blue': '#3B82F6',
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    }
+                },
+            },
+        };
+    </script>
+    
+    <style>
+        .glass-effect {
+            background: rgba(24, 24, 27, 0.5); /* Semi-transparent version of brand-bg */
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(63, 63, 70, 0.5); /* Semi-transparent version of brand-border */
+        }
+
+        .bg-shapes div {
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text-primary font-sans antialiased overflow-hidden">
+
+    <!-- Animated background shapes -->
+    <div class="fixed top-0 left-0 w-full h-full bg-shapes">
+        <div class="bg-brand-accent-blue" style="width: 400px; height: 400px; top: 10%; left: 20%;"></div>
+        <div class="bg-brand-accent-pink" style="width: 300px; height: 300px; top: 50%; left: 60%;"></div>
+        <div class="bg-brand-accent-purple" style="width: 350px; height: 350px; top: 30%; left: 80%;"></div>
+    </div>
+
+    <div class="min-h-screen flex items-center justify-center p-4 relative">
+        <main class="w-full max-w-md mx-auto">
+            
+            <div class="glass-effect p-8 rounded-2xl">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-brand-text-primary">Create an Account</h1>
+                    <p class="text-brand-text-secondary">Join the hub and start collaborating</p>
+                </div>
+                
+                <form class="space-y-6">
+                     <div>
+                        <label for="username" class="block text-sm font-medium text-brand-text-secondary mb-2">Username</label>
+                        <input type="text" id="username" name="username" placeholder="e.g., adrianward" class="w-full bg-brand-bg p-3 rounded-xl border border-brand-border/50 focus:outline-none focus:ring-2 focus:ring-brand-accent-purple transition">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-brand-text-secondary mb-2">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" class="w-full bg-brand-bg p-3 rounded-xl border border-brand-border/50 focus:outline-none focus:ring-2 focus:ring-brand-accent-purple transition">
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-brand-text-secondary mb-2">Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" class="w-full bg-brand-bg p-3 rounded-xl border border-brand-border/50 focus:outline-none focus:ring-2 focus:ring-brand-accent-purple transition">
+                    </div>
+                    
+                    <button type="submit" class="w-full font-bold text-white bg-gradient-to-r from-brand-accent-purple to-brand-accent-pink py-3 rounded-xl transition-transform hover:scale-105">
+                        Create Account
+                    </button>
+                </form>
+
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-brand-text-secondary">
+                        Already have an account? <a href="login.html" class="font-semibold text-brand-accent-blue hover:underline">Sign In</a>
+                    </p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
